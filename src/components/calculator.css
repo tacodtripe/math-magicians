@@ -1,0 +1,15 @@
+#calc-container {
+  border: solid black 1px;
+}
+
+#calc-container .row {
+  text-align: center;
+}
+
+.fas {
+  font-size: 13px;
+}
+
+#calc-container .row:first-of-type {
+  color: white;
+}
