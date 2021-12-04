@@ -74,7 +74,9 @@ export default function calculate(obj, buttonName) {
       };
     }
     // '=' with no operation, nothing to do
-    return {};
+    return {
+      total: 0
+    };
   }
 
   if (buttonName === '+/-') {
@@ -91,9 +93,11 @@ export default function calculate(obj, buttonName) {
 
   // When the user presses an operation button without having entered
   // a number first, do nothing.
-  // if (!obj.next && !obj.total) {
-  //   return {};
-  // }
+  if (!obj.next && !obj.total) {
+    return {
+      total: 0
+    };
+  }
 
   // User pressed an operation after pressing '='
   if (!obj.next && obj.total && !obj.operation) {
