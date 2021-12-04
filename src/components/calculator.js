@@ -5,7 +5,7 @@ import './calculator.css';
 const Calculator = () => {
   const [state, setState] = useState({
     total: 0,
-    next: 0,
+    next: null,
     operation: null,
   });
 
