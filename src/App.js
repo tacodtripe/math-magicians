@@ -1,6 +1,8 @@
+import React from 'react';
 import Calculator from './components/calculator';
 
-class App {
+// eslint-disable-next-line react/prefer-stateless-function
+export default class App extends React.Component {
   render() {
     return (
       <div className="container">
@@ -10,5 +12,3 @@ class App {
     );
   }
 }
-
-export default App;
