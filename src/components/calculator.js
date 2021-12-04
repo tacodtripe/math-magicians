@@ -1,18 +1,8 @@
-/* eslint-disable react/prefer-stateless-function, jsx-a11y/click-events-have-key-events, react/no-unused-state, max-len, react/jsx-one-expression-per-line, jsx-a11y/control-has-associated-label, import/prefer-default-export */
 import React, { useState } from 'react';
 import calculate from '../logic/calculate';
 import './calculator.css';
 
-export const Calculator = () => {
-  // constructor(props) {
-  //   super(props);
-  //   this.operationHandler = this.operationHandler.bind(this);
-  //   this.state = {
-  //     total: 0,
-  //     next: 0,
-  //     operation: null,
-  //   };
-  // }
+const Calculator = () => {
   const [state, setState] = useState({
     total: 0,
     next: 0,
@@ -27,7 +17,13 @@ export const Calculator = () => {
   return (
     <div className="row justify-content-center">
       <div className="col-sm-12 col-md-4" id="calc-container">
-        <div className="row justify-content-end px-1 bg-secondary">{total} {operation} {next}</div>
+        <div className="row justify-content-end px-1 bg-secondary">
+          {total}
+          {' '}
+          {operation}
+          {' '}
+          {next}
+        </div>
         <div className="row justify-content-center align-content-center">
           <button onClick={operationHandler} className="col-3 border" type="button" value="AC">AC</button>
           <button onClick={operationHandler} className="col-3 border" type="button">+/-</button>
@@ -61,3 +57,5 @@ export const Calculator = () => {
     </div>
   );
 };
+
+export default Calculator;
