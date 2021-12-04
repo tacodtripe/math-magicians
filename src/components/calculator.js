@@ -1,42 +1,59 @@
+/* eslint-disable react/prefer-stateless-function, jsx-a11y/click-events-have-key-events, react/no-unused-state, max-len, react/jsx-one-expression-per-line, jsx-a11y/control-has-associated-label */
 import React from 'react';
+import calculate from '../logic/calculate';
 import './calculator.css';
+// import calculate from '../logic/calculate';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.operationHandler = this.operationHandler.bind(this);
+    this.state = {
+      total: 0,
+      next: 0,
+      operation: null,
+    };
+  }
+
+  operationHandler = (e) => {
+    this.setState((state) => calculate(state, e.target.value));
+  }
+
   render() {
+    const { total, next, operation } = this.state;
     return (
       <>
         <div className="row justify-content-center">
           <div className="col-sm-12 col-md-4" id="calc-container">
-            <div className="row justify-content-end px-1 bg-secondary">0</div>
+            <div className="row justify-content-end px-1 bg-secondary">{total} {operation} {next}</div>
             <div className="row justify-content-center align-content-center">
-              <div className="col-3 border">AC</div>
-              <div className="col-3 border">+/-</div>
-              <div className="col-3 border">%</div>
-              <div className="col-3 bg-warning border"><i className="fas fa-divide" /></div>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="AC">AC</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button">+/-</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="%">%</button>
+              <button onClick={this.operationHandler} className="col-3 bg-warning border" type="button" value="÷">÷</button>
             </div>
             <div className="row justify-content-center align-content-center">
-              <div className="col-3 border">7</div>
-              <div className="col-3 border">8</div>
-              <div className="col-3 border">9</div>
-              <div className="col-3 bg-warning border">x</div>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="7">7</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="8">8</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="9">9</button>
+              <button onClick={this.operationHandler} className="col-3 bg-warning border" type="button" value="x">x</button>
             </div>
             <div className="row justify-content-center align-content-center">
-              <div className="col-3 border">4</div>
-              <div className="col-3 border">5</div>
-              <div className="col-3 border">6</div>
-              <div className="col-3 bg-warning border">-</div>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="4">4</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="5">5</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="6">6</button>
+              <button onClick={this.operationHandler} className="col-3 bg-warning border" type="button" value="-">-</button>
             </div>
             <div className="row justify-content-center align-content-center">
-              <div className="col-3 border">1</div>
-              <div className="col-3 border">2</div>
-              <div className="col-3 border">3</div>
-              <div className="col-3 bg-warning border">+</div>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="1">1</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="2">2</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value="3">3</button>
+              <button onClick={this.operationHandler} className="col-3 bg-warning border" type="button" value="+">+</button>
             </div>
             <div className="row justify-content-center align-content-center">
-              <div className="col-6 border">0</div>
-              <div className="col-3 border">.</div>
-              <div className="col-3 bg-warning border">=</div>
+              <button onClick={this.operationHandler} className="col-6 border" type="button" value="0">0</button>
+              <button onClick={this.operationHandler} className="col-3 border" type="button" value=".">.</button>
+              <button onClick={this.operationHandler} className="col-3 bg-warning border" type="button" value="=">=</button>
             </div>
           </div>
         </div>
