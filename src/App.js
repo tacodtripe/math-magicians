@@ -6,7 +6,7 @@ import Quotes from './components/Quotes';
 import './App.css';
 
 const App = () => (
-  <div className="container">
+  <div className="container-fluid">
     <nav className="">
       <div className="row justify-content-center nav-container">
         <h1 className="col-5 text-center">Math Magicians</h1>
