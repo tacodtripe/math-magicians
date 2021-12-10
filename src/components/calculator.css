@@ -1,3 +1,13 @@
+.fas {
+  font-size: 13px;
+}
+
+.wrapper {
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
 #calc-container {
   border: solid black 1px;
 }
@@ -6,10 +16,17 @@
   text-align: center;
 }
 
-.fas {
-  font-size: 13px;
-}
-
 #calc-container .row:first-of-type {
   color: white;
+}
+
+.row button:first-of-type:hover,
+.row button:nth-of-type(2):hover,
+.row button:nth-of-type(3):hover {
+  background-color: #d1d1d1;
+}
+
+.row button:nth-of-type(4):hover,
+.equal-sign:hover {
+  background-color: rgb(199 102 68) !important;
 }

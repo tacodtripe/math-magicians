@@ -15,8 +15,11 @@ const Calculator = () => {
 
   const { total, next, operation } = state;
   return (
-    <div className="row justify-content-center">
-      <div className="col-sm-12 col-md-4" id="calc-container">
+    <div className="row justify-content-center wrapper">
+      <div className="col-12 col-md-6 text-center">
+        <h3>Let&apos;s do some math!</h3>
+      </div>
+      <div className="col-12 col-md-6" id="calc-container">
         <div className="row justify-content-end px-1 bg-secondary">
           {total}
           {' '}
@@ -51,7 +54,7 @@ const Calculator = () => {
         <div className="row justify-content-center align-content-center">
           <button onClick={operationHandler} className="col-6 border" type="button" value="0">0</button>
           <button onClick={operationHandler} className="col-3 border" type="button" value=".">.</button>
-          <button onClick={operationHandler} className="col-3 bg-warning border" type="button" value="=">=</button>
+          <button onClick={operationHandler} className="col-3 bg-warning border equal-sign" type="button" value="=">=</button>
         </div>
       </div>
     </div>
