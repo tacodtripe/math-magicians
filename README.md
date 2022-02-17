@@ -11,6 +11,10 @@
 - HTML
 - CSS
 
+## Live version
+
+- [Here](https://tacodtripe-math-magicians.netlify.app/)
+
 ### Prerequisites
 
 - Text Editor (VSCode for example)
